@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en" ng-app>
+<!doctype html>
+<html lang="en" ng-app="toDoApp">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,18 +7,39 @@
 	<title>ToDoList</title>
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	<!-- AngularJS -->	
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+	<!-- ToDoList -->
+	<script src="app.js"></script>
+	<script src="app-controller.js"></script>
 </head>
 <body>
-	<h2>Todo</h2>
-	<div ng-controller="ToDoCtrl">
-		Incomplete <span class="badge">{{remaining()}}</span></a>
+	<div class="container" ng-controller="ToDoCtrl">
+		<div class="row">
+			<h2>ToDoList</h2>
+			<ul class="nav nav-pills">
+				<li>
+					<a href="#">Incomplete <span class="badge">{{getRemainingToDos()}}</span></a>
+				</li>
+				<li>
+					<a href="#">All <span class="badge">{{getTotalToDos()}}</span></a>
+				</li>
+			</ul>
+			<ul class="list-unstyled">
+				<li ng-repeat="todo in todos">
+					<input type="checkbox" ng-model="todo.done"> {{todo.text}}
+				</li>
+			</ul>
+			<form role="form" ng-submit="addToDo()">
+				<div class="form-group">
+					<input type="text" ng-model="toDoText" size="30" placeholder="add new todo here">
+					<input class="btn btn-sm btn-default" type="submit" value="add">
+				</div>
+				
+				<button type="button" class="btn btn-sm btn-default" ng-click="clearCompletedToDos()">clear completed</button>
+			</form>		
+		</div>
 	</div>
 </body>
-<!-- AngularJS -->	
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.8/angular.min.js"></script>
-<!-- ToDoList -->
-<script src="app.js"></script>
-<script src="app-controller.js"></script>
-<!-- Bootstrap -->
-<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 </html>

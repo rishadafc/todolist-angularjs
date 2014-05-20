@@ -1,7 +1,12 @@
-function ToDoCtrl($scope) {
-	$scope.todos = [];
+var todoApp = angular.module('toDoApp', []);
 
-	$scope.getTotalTodos = function() {
+todoApp.controller('ToDoCtrl', function ($scope) {
+	$scope.todos = [
+	{text:'do laundry', done:true},
+	{text:'write some code', done:false}
+	];
+
+	$scope.getTotalToDos = function() {
 		return $scope.todos.length;
 	};
 
@@ -15,16 +20,18 @@ function ToDoCtrl($scope) {
 	};
 
 	$scope.clearCompletedToDos = function() {
-		$scope.todos $scope.todos.filter(function(todo) {
-			return !todo.completed;
+		var oldTodos = $scope.todos;
+		$scope.todos = [];
+		angular.forEach(oldTodos, function(todo) {
+			if (!todo.done) $scope.todos.push(todo);
 		});
 	};
 
-	$scope.remaining = function() {
+	$scope.getRemainingToDos = function() {
 		var incomplete = 0;
 		angular.forEach($scope.todos, function(todo) {
 			incomplete += todo.done ? 0 : 1;
 		});
 		return incomplete;
 	};
-}
+});

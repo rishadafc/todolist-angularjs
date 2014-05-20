@@ -34,12 +34,16 @@
 			<form role="form" ng-submit="addToDo()">
 				<div class="form-group">
 					<input type="text" ng-model="toDoText" size="30" placeholder="what do you want to do today?">
-					<input class="btn btn-sm btn-default" type="submit" value="add">
+					<button class="btn btn-sm btn-default" type="submit"><span class="glyphicon glyphicon-plus"></span> add</button>
 				</div>
-				
-				<button type="button" class="btn btn-sm btn-default" ng-click="clearCompletedToDos()">clear completed</button>
+				<button type="button" class="btn btn-sm btn-default" ng-click="clearCompletedToDos()"><span class="glyphicon glyphicon-ok"></span>
+clear completed</button>
 			</form>		
+			</br><a href="https://github.com/rishadafc/todolist-angularjs" target="_blank" class="small">GitHub repo</a>
 		</div>
+
 	</div>
+
+
 </body>
 </html>

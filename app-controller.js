@@ -1,6 +1,6 @@
-var todoApp = angular.module('toDoApp', []);
+var toDoApp = angular.module('toDoApp', []);
 
-todoApp.controller('ToDoCtrl', function ($scope) {
+toDoApp.controller('ToDoCtrl', function ($scope) {
 	$scope.todos = [
 	{text:'do laundry', done:true},
 	{text:'write some code', done:false}

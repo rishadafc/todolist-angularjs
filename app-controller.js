@@ -1,9 +1,9 @@
-function TodoCtrl($scope) {
+function ToDoCtrl($scope) {
 	$scope.todos = [];
 
 	$scope.getTotalTodos = function() {
-    return $scope.todos.length;
-  };
+		return $scope.todos.length;
+	};
 
 	$scope.addToDo = function() {
 		$scope.todos.push({text:$scope.toDoText, done:false});
@@ -18,5 +18,13 @@ function TodoCtrl($scope) {
 		$scope.todos $scope.todos.filter(function(todo) {
 			return !todo.completed;
 		});
+	};
+
+	$scope.remaining = function() {
+		var incomplete = 0;
+		angular.forEach($scope.todos, function(todo) {
+			incomplete += todo.done ? 0 : 1;
+		});
+		return incomplete;
 	};
 }

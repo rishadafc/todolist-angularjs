@@ -1,10 +1,7 @@
-source 'https://rubygems.org'
-
 ruby '2.1.1'
 
-gem 'rack'
-gem 'json'
+source 'https://rubygems.org'
+
 gem 'grape'
-gem 'mongo'
-gem 'bson_ext'
-gem 'mongoid'
+gem 'mongoid', "3.1.6"
+gem 'forgery'

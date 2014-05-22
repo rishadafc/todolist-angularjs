@@ -1,26 +1,23 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (4.1.1)
-      i18n (~> 0.6, >= 0.6.9)
-      json (~> 1.7, >= 1.7.7)
-      minitest (~> 5.1)
-      thread_safe (~> 0.1)
-      tzinfo (~> 1.1)
+    activemodel (3.2.18)
+      activesupport (= 3.2.18)
+      builder (~> 3.0.0)
+    activesupport (3.2.18)
+      i18n (~> 0.6, >= 0.6.4)
+      multi_json (~> 1.0)
     axiom-types (0.1.1)
       descendants_tracker (~> 0.0.4)
       ice_nine (~> 0.11.0)
       thread_safe (~> 0.3, >= 0.3.1)
-    bson (1.10.1)
-    bson_ext (1.10.1)
-      bson (~> 1.10.1)
-    builder (3.2.2)
+    builder (3.0.4)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
-    durran-validatable (2.0.1)
     equalizer (0.0.9)
+    forgery (0.6.0)
     grape (0.7.0)
       activesupport
       builder
@@ -34,26 +31,22 @@ GEM
     hashie (2.1.1)
     i18n (0.6.9)
     ice_nine (0.11.0)
-    json (1.8.1)
-    leshill-will_paginate (2.3.11)
-    minitest (5.3.4)
-    mongo (1.10.1)
-      bson (~> 1.10.1)
-    mongoid (1.0.6)
-      activesupport (>= 2.2.2)
-      durran-validatable (>= 2.0.1)
-      leshill-will_paginate (>= 2.3.11)
-      mongo (>= 0.18.2)
+    mongoid (3.1.6)
+      activemodel (~> 3.2)
+      moped (~> 1.4)
+      origin (~> 1.0)
+      tzinfo (~> 0.3.29)
+    moped (1.5.2)
     multi_json (1.10.1)
     multi_xml (0.5.5)
+    origin (1.1.0)
     rack (1.5.2)
     rack-accept (0.4.5)
       rack (>= 0.4)
     rack-mount (0.8.3)
       rack (>= 1.0.0)
     thread_safe (0.3.3)
-    tzinfo (1.1.0)
-      thread_safe (~> 0.1)
+    tzinfo (0.3.39)
     virtus (1.0.2)
       axiom-types (~> 0.1)
       coercible (~> 1.0)
@@ -64,9 +57,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bson_ext
+  forgery
   grape
-  json
-  mongo
-  mongoid
-  rack
+  mongoid (= 3.1.6)

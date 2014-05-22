@@ -20,7 +20,7 @@ class ToDoListApiV1 < Grape::API
       get {ToDo.find params[:id]}
       put do
         user = ToDo.find params[:id]
-        user.update_attributes!(params.slice(:name, :age, :email))
+        user.update_attributes!(params.slice(:description, :status))
       end
       delete {ToDo.find(params[:id]).destroy}
     end

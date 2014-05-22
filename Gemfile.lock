@@ -1,5 +1,5 @@
 GEM
-  remote: http://rubygems.org/
+  remote: https://rubygems.org/
   specs:
     activesupport (4.1.1)
       i18n (~> 0.6, >= 0.6.9)
@@ -11,11 +11,15 @@ GEM
       descendants_tracker (~> 0.0.4)
       ice_nine (~> 0.11.0)
       thread_safe (~> 0.3, >= 0.3.1)
+    bson (1.10.1)
+    bson_ext (1.10.1)
+      bson (~> 1.10.1)
     builder (3.2.2)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
+    durran-validatable (2.0.1)
     equalizer (0.0.9)
     grape (0.7.0)
       activesupport
@@ -31,7 +35,15 @@ GEM
     i18n (0.6.9)
     ice_nine (0.11.0)
     json (1.8.1)
+    leshill-will_paginate (2.3.11)
     minitest (5.3.4)
+    mongo (1.10.1)
+      bson (~> 1.10.1)
+    mongoid (1.0.6)
+      activesupport (>= 2.2.2)
+      durran-validatable (>= 2.0.1)
+      leshill-will_paginate (>= 2.3.11)
+      mongo (>= 0.18.2)
     multi_json (1.10.1)
     multi_xml (0.5.5)
     rack (1.5.2)
@@ -52,6 +64,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bson_ext
   grape
   json
+  mongo
+  mongoid
   rack
